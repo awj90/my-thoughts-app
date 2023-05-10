@@ -1,0 +1,22 @@
+.error {
+  color: red;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.app-button {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.grid-container {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 1fr;
+  row-gap: 2vh;
+}
+
+.space-it {
+  display: flex;
+  justify-content: space-around;
+}

@@ -1,0 +1,50 @@
+<form [formGroup]="form" (ngSubmit)="processForm()">
+  <div class="grid-container">
+    <mat-form-field
+      hintLabel="Max {{ maxCharacters }} characters"
+      appearance="outline"
+    >
+      <mat-label></mat-label>
+      <textarea
+        matInput
+        #input
+        maxlength="{{ maxCharacters }}"
+        rows="5"
+        cols="30"
+        placeholder="Type here"
+        formControlName="thought"
+      ></textarea>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint align="end"
+        >{{ input.value.length }}/{{ maxCharacters }}</mat-hint
+      >
+    </mat-form-field>
+  </div>
+  <div class="space-it">
+    <div class="app-button">
+      <button
+        mat-raised-button
+        color="primary"
+        type="button"
+        (click)="clearForm()"
+      >
+        Clear
+      </button>
+    </div>
+
+    <div class="app-button">
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="invalid()"
+      >
+        Share
+      </button>
+    </div>
+  </div>
+
+  <!-- <div *ngIf="form.get('thought')?.hasError('maxlength')" class="error">
+    Maximum Characters exceeded!
+  </div> -->
+</form>
